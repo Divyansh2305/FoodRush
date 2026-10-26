@@ -4,6 +4,7 @@
   "description": "FoodRush responsive food and quick-commerce ordering experience",
   "scripts": {
     "start": "node dev-server.js",
+    "start:prod": "node server.js",
     "build": "parcel build index.html",
     "test": "jest",
     "watch-test": "jest --watch",
