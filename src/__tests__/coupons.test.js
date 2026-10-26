@@ -1,0 +1,2 @@
+import { couponEligibility, calculateDiscount } from "../utilis/coupons";
+test("QUICK50 only discounts grocery subtotal",()=>{const items=[{id:"g",source:"grocery",price:400,quantity:1},{id:"f",source:"food",price:500,quantity:1}];const result=couponEligibility("QUICK50",items,"test-user");expect(result.ok).toBe(true);expect(result.base).toBe(400);expect(calculateDiscount(result.coupon,result.base)).toBe(50);});

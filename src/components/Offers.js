@@ -1,0 +1,4 @@
+import { COUPONS } from "../utilis/constants";
+import { useAuth } from "../context/AuthContext";
+import { getOrders } from "../utilis/storage";
+const Offers=()=>{const{user}=useAuth();const first=!user||getOrders(user.id).length===0;return <main className="fr-account-page"><div className="fr-page-heading-pro"><div><p className="fr-kicker">SAVE MORE</p><h1>Offers & coupons</h1><p>Codes are checked automatically against cart type, value and eligibility.</p></div></div><div className="fr-offers-grid-pro">{Object.values(COUPONS).map(c=><article className="fr-offer-card-pro" key={c.code}><div><small>{c.scope==="grocery"?"FOODRUSH QUICK":c.scope==="food"?"RESTAURANTS":"NEW CUSTOMER"}</small><h2>{c.code}</h2><p>{c.label}</p><span>Minimum eligible spend ₹{c.min}</span>{c.firstOrderOnly&&!first&&<em>Already used / not eligible</em>}</div><button onClick={()=>navigator.clipboard?.writeText(c.code)}>Copy code</button></article>)}</div></main>};export default Offers;

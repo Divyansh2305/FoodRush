@@ -1,0 +1,1 @@
+export default function EmptyState({icon="🍽️",title,description,action}){return <div className="fr-empty-state"><div className="fr-empty-icon">{icon}</div><h1>{title}</h1>{description&&<p>{description}</p>}{action}</div>}

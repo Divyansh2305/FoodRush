@@ -1,0 +1,2 @@
+const globals = { window:"readonly", document:"readonly", navigator:"readonly", localStorage:"readonly", sessionStorage:"readonly", location:"readonly", confirm:"readonly", alert:"readonly", crypto:"readonly", Blob:"readonly", URL:"readonly", fetch:"readonly", setTimeout:"readonly", process:"readonly" };
+module.exports = [{ files:["src/**/*.js"], languageOptions:{ ecmaVersion:2023, sourceType:"module", parserOptions:{ ecmaFeatures:{jsx:true} }, globals }, rules:{ "no-undef":"error", "no-unused-vars":["warn",{argsIgnorePattern:"^_"}] } }];

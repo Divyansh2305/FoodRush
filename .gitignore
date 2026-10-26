@@ -1,0 +1,7 @@
+/node_modules
+/dist
+.parcel-cache
+.vscode
+/coverage
+.env
+/data/users.json
